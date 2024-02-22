@@ -16,7 +16,7 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         .AddCookie(options =>
         {
             options.LoginPath = "/Account/Login"; // Specify your login path
-            //options.AccessDeniedPath = "/Account/AccessDenied"; // Specify your access denied path
+            options.AccessDeniedPath = "/Account/AccessDenied"; // Specify your access denied path
         });
 
 builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
@@ -47,5 +47,6 @@ app.UseAuthentication();
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Account}/{action=Register}/{id?}");
+
 
 app.Run();

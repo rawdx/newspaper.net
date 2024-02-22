@@ -10,11 +10,13 @@ namespace newspaper.net.Controllers
 {
 	public class AccountController : Controller
 	{
+        private readonly ILogger<AccountController> _logger;
         private readonly IUserService _userService;
 
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, ILogger<AccountController> logger)
         {
             _userService = userService;
+            _logger = logger;
         }
 
         [HttpGet]
@@ -28,11 +30,14 @@ namespace newspaper.net.Controllers
         {
             try
             {
+                user.Role = "User";
                 var registeredUser = _userService.RegisterUser(user);
+                _logger.LogInformation($"User registered successfully. Email: {user.Email}, UserId: {registeredUser.Id}");
                 return View("RegisterConfirmation");
             }
             catch (InvalidOperationException ex)
             {
+                _logger.LogError($"Error registering user with email {user.Email}: {ex.Message}");
                 ModelState.AddModelError("Email", ex.Message);
                 return View(user);
             }
@@ -41,9 +46,17 @@ namespace newspaper.net.Controllers
         [HttpGet]
         public IActionResult VerifyEmail(string token)
         {
-            if (_userService.VerifyEmail(token))
+            try
             {
-                return View("VerifyEmailSuccess");
+                if (_userService.VerifyEmail(token))
+                {
+                    _logger.LogInformation($"Email verification successful. Token: {token}");
+                    return View("VerifyEmailSuccess");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error verifying email with token {token}: {ex.Message}");
             }
 
             return View("VerifyEmailFailure");
@@ -57,18 +70,36 @@ namespace newspaper.net.Controllers
 
 		[HttpPost]
 		public IActionResult Login(string email, string password)
-		{
-            var user = _userService.AuthenticateUser(email, password);
-
-            if (user != null)
+        {
+            try
             {
-                // Set authentication cookie or use your preferred authentication mechanism
+                var user = _userService.AuthenticateUser(email, password);
 
-                return RedirectToAction("Index", "Home");
+                if (user != null)
+                {
+                    if (user.Role == "Admin")
+                    {
+                        _logger.LogInformation($"Admin user authenticated successfully. Email: {user.Email}, UserId: {user.Id}");
+
+                        List<User> userList = _userService.GetAllUsers();
+
+                        return View("~/Views/Admin/UserList.cshtml", userList);
+                    }
+                    else
+                    {
+                        _logger.LogInformation($"User authenticated successfully. Email: {user.Email}, UserId: {user.Id}");
+                        return View("~/Views/Home/Index");
+                    }
+                }
+
+                _logger.LogWarning($"Invalid login attempt for email: {email}");
+                ModelState.AddModelError("", "Invalid email or password");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Error authenticating user with email {email}: {ex.Message}");
             }
 
-            // Invalid credentials
-            ModelState.AddModelError("", "Invalid email or password");
             return View();
         }
     }

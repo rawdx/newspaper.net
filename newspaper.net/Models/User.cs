@@ -27,7 +27,11 @@ namespace newspaper.net.Models
 
 		public bool IsVerified { get; set; }
 
-		public string? ResetToken { get; set; }
+        [Required]
+        [StringLength(20)]
+        public required string Role { get; set; }
+
+        public string? ResetToken { get; set; }
 
 		public DateTime? ResetTokenExpiry { get; set; }
 	}

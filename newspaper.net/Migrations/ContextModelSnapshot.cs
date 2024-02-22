@@ -57,6 +57,11 @@ namespace newspaper.net.Migrations
                     b.Property<DateTime?>("ResetTokenExpiry")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
                     b.Property<string>("VerificationToken")
                         .HasColumnType("text");
 

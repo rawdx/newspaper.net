@@ -24,6 +24,7 @@ namespace newspaper.net.Migrations
                     Phone = table.Column<string>(type: "character varying(15)", maxLength: 15, nullable: true),
                     VerificationToken = table.Column<string>(type: "text", nullable: true),
                     IsVerified = table.Column<bool>(type: "boolean", nullable: false),
+                    Role = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
                     ResetToken = table.Column<string>(type: "text", nullable: true),
                     ResetTokenExpiry = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },

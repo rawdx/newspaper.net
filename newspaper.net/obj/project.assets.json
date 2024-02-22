@@ -2980,19 +2980,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Puesto18\\.nuget\\packages\\": {}
+    "C:\\Users\\raulc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+      "projectUniqueName": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
       "projectName": "newspaper.net",
-      "projectPath": "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
-      "packagesPath": "C:\\Users\\Puesto18\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\obj\\",
+      "projectPath": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+      "packagesPath": "C:\\Users\\raulc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Puesto18\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\raulc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

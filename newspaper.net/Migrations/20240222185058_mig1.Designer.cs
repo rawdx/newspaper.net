@@ -12,7 +12,7 @@ using newspaper.net.Data;
 namespace newspaper.net.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20240221205311_mig1")]
+    [Migration("20240222185058_mig1")]
     partial class mig1
     {
         /// <inheritdoc />
@@ -59,6 +59,11 @@ namespace newspaper.net.Migrations
 
                     b.Property<DateTime?>("ResetTokenExpiry")
                         .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.Property<string>("VerificationToken")
                         .HasColumnType("text");

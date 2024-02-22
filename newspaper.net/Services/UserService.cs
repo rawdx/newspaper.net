@@ -9,12 +9,18 @@ namespace newspaper.net.Services
     {
         bool IsEmailAlreadyRegistered(string email);
         User RegisterUser(User user);
+        List<User> GetAllUsers();
+        User GetUserById(int id);
+        void UpdateUser(User user);
+        void DeleteUser(int id);
         bool VerifyEmail(string token);
-        User AuthenticateUser(string email, string password);
+        User? AuthenticateUser(string email, string password);
     }
 
     public class UserService : IUserService
     {
+        private readonly List<User> _users = new List<User>();
+
         private readonly Context _context;
 
         public UserService(Context context)
@@ -47,6 +53,49 @@ namespace newspaper.net.Services
             return user;
         }
 
+        public List<User> GetAllUsers()
+        {
+            return _users;
+        }
+
+        public User GetUserById(int id)
+        {
+            return _users.FirstOrDefault(u => u.Id == id);
+        }
+
+        public void UpdateUser(User user)
+        {
+            var existingUser = _users.FirstOrDefault(u => u.Id == user.Id);
+
+            if (existingUser != null)
+            {
+                existingUser.Email = user.Email;
+                existingUser.Password = user.Password; // Note: In a real scenario, you might want to hash the new password
+                existingUser.Name = user.Name;
+                existingUser.Phone = user.Phone;
+                existingUser.IsVerified = user.IsVerified;
+                existingUser.Role = user.Role;
+            }
+            else
+            {
+                throw new InvalidOperationException("User not found.");
+            }
+        }
+
+        public void DeleteUser(int id)
+        {
+            var userToRemove = _users.FirstOrDefault(u => u.Id == id);
+
+            if (userToRemove != null)
+            {
+                _users.Remove(userToRemove);
+            }
+            else
+            {
+                throw new InvalidOperationException("User not found.");
+            }
+        }
+
         public bool VerifyEmail(string token)
         {
             if (string.IsNullOrEmpty(token))
@@ -64,11 +113,22 @@ namespace newspaper.net.Services
             }
 
             return false;
-        }
+        }   
 
-        public User AuthenticateUser(string email, string password)
+        public User? AuthenticateUser(string email, string password)
         {
-            return _context.Users.FirstOrDefault(u => u.Email == email && u.Password == password);
+            var storedUser = _context.Users.FirstOrDefault(u => u.Email == email);
+
+            if (storedUser != null)
+            {
+                // Use BCrypt.Net to verify the password
+                if (BCrypt.Net.BCrypt.Verify(password, storedUser.Password))
+                {
+                    return storedUser;
+                }
+            }
+
+            return null;
         }
 
         private string HashPassword(string password)
