@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using newspaper.net.Models;
 using System.Diagnostics;
@@ -13,14 +14,26 @@ namespace newspaper.net.Controllers
 			_logger = logger;
 		}
 
-		public IActionResult Index()
+        [Authorize]
+        public IActionResult Index()
 		{
-			return View();
-		}
+            if (User.Identity.IsAuthenticated)
+            {
+                // User is authenticated
+                // Access user information using User.Identity.Name, User.FindFirst, etc.
+                return View();
+            }
+            else
+            {
+                // User is not authenticated, handle accordingly
+                return RedirectToAction("Register", "Account");
+            }
+        }
 
 		public IActionResult Privacy()
 		{
-			return View();
+            _logger.LogInformation("hfsdahfsahfsaf");
+            return View();
 		}
 
 		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

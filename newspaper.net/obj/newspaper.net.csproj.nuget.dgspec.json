@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj": {}
+    "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\newspaper.net.csproj": {}
   },
   "projects": {
-    "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj": {
+    "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\newspaper.net.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+        "projectUniqueName": "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
         "projectName": "newspaper.net",
-        "projectPath": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
-        "packagesPath": "C:\\Users\\raulc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\obj\\",
+        "projectPath": "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+        "packagesPath": "C:\\Users\\Puesto18\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Puesto18\\Documents\\newspaper.net\\newspaper.net\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\raulc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Puesto18\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -58,6 +58,14 @@
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
               "version": "[8.0.2, )"
+            },
+            "Serilog": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
             }
           },
           "imports": [

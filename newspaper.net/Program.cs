@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using newspaper.net.Data;
+using newspaper.net.Services;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +11,17 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Context>(
 	o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(options =>
+        {
+            options.LoginPath = "/Account/Login"; // Specify your login path
+            //options.AccessDeniedPath = "/Account/AccessDenied"; // Specify your access denied path
+        });
+
+builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
+
+builder.Services.AddScoped<IUserService, UserService>();
 
 var app = builder.Build();
 
@@ -19,6 +33,8 @@ if (!app.Environment.IsDevelopment())
 	app.UseHsts();
 }
 
+app.UseSerilogRequestLogging();
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
@@ -26,8 +42,10 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseAuthentication();
+
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+	pattern: "{controller=Account}/{action=Register}/{id?}");
 
 app.Run();
