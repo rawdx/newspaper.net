@@ -1,0 +1,345 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\account\\verifyemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\account\\verifyemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\account\\registerconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\account\\verifyemailfailure.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\account\\verifyemailfailure.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\account\\verifyemailsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\account\\verifyemailsuccess.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\data\\context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\migrations\\20240221205311_mig1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\migrations\\20240221205311_mig1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\models\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\models\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\newspaper.net.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\newspaper.net.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|c:\\users\\raulc\\documents\\code\\c#\\newspaper.net\\newspaper.net\\newspaper.net.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{3054A613-3F5E-49E5-8067-D007BE38538E}|newspaper.net\\newspaper.net.csproj|solutionrelative:newspaper.net\\newspaper.net.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "VerifyEmailSuccess.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\VerifyEmailSuccess.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Account\\VerifyEmailSuccess.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\VerifyEmailSuccess.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Account\\VerifyEmailSuccess.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-22T09:41:21.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20240221205311_mig1.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Migrations\\20240221205311_mig1.cs",
+              "RelativeDocumentMoniker": "newspaper.net\\Migrations\\20240221205311_mig1.cs",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Migrations\\20240221205311_mig1.cs",
+              "RelativeToolTip": "newspaper.net\\Migrations\\20240221205311_mig1.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T20:53:11.661Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "VerifyEmailFailure.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\VerifyEmailFailure.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Account\\VerifyEmailFailure.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\VerifyEmailFailure.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Account\\VerifyEmailFailure.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T20:48:30.181Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VerifyEmail.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\VerifyEmail.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Account\\VerifyEmail.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\VerifyEmail.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Account\\VerifyEmail.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T20:42:25.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterConfirmation.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\RegisterConfirmation.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Account\\RegisterConfirmation.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\RegisterConfirmation.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Account\\RegisterConfirmation.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T20:42:08.191Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\_ViewImports.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T16:57:26.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Home\\Privacy.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T19:46:44.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Home\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T19:46:42.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T19:46:37.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Account\\Login.cshtml",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA4AAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T16:53:47.355Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "newspaper.net\\Views\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "newspaper.net\\Views\\Account\\Register.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-02-21T16:53:32.065Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "newspaper.net\\Controllers\\AccountController.cs",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "newspaper.net\\Controllers\\AccountController.cs",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAIwHEAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T16:49:40.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Context.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Data\\Context.cs",
+              "RelativeDocumentMoniker": "newspaper.net\\Data\\Context.cs",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Data\\Context.cs",
+              "RelativeToolTip": "newspaper.net\\Data\\Context.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T16:26:51.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\appsettings.json",
+              "RelativeDocumentMoniker": "newspaper.net\\appsettings.json",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\appsettings.json",
+              "RelativeToolTip": "newspaper.net\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-02-21T16:09:55.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Models\\Dtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "newspaper.net\\Models\\Dtos\\UserDto.cs",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Models\\Dtos\\UserDto.cs",
+              "RelativeToolTip": "newspaper.net\\Models\\Dtos\\UserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T16:08:34.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "newspaper.net\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "newspaper.net\\Models\\ErrorViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-21T16:09:30.123Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Program.cs",
+              "RelativeDocumentMoniker": "newspaper.net\\Program.cs",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Program.cs",
+              "RelativeToolTip": "newspaper.net\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAABOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T12:31:32.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Models\\User.cs",
+              "RelativeDocumentMoniker": "newspaper.net\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\Models\\User.cs",
+              "RelativeToolTip": "newspaper.net\\Models\\User.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-18T12:32:12.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "newspaper.net.csproj",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+              "RelativeDocumentMoniker": "newspaper.net\\newspaper.net.csproj",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+              "RelativeToolTip": "newspaper.net\\newspaper.net.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-20T16:28:33.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "newspaper.net",
+              "DocumentMoniker": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+              "RelativeDocumentMoniker": "newspaper.net\\newspaper.net.csproj",
+              "ToolTip": "C:\\Users\\raulc\\Documents\\Code\\C#\\newspaper.net\\newspaper.net\\newspaper.net.csproj",
+              "RelativeToolTip": "newspaper.net\\newspaper.net.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-02-20T16:28:31.462Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
