@@ -14,29 +14,39 @@ namespace newspaper.net.Controllers
 			_logger = logger;
 		}
 
-        [Authorize]
+        /// <summary>
+        /// Action for the home page.
+        /// If the user is authenticated, displays a personalized welcome message.
+        /// Otherwise, redirects to the login page.
+        /// </summary>
+        /// <returns>ViewResult</returns>
         public IActionResult Index()
 		{
-            if (User.Identity.IsAuthenticated)
+            try
             {
-                // User is authenticated
-                // Access user information using User.Identity.Name, User.FindFirst, etc.
-                return View();
+                if (User.Identity.IsAuthenticated)
+                {
+                    ViewData["UserName"] = User.Identity.Name;
+
+                    return View();
+                }
+                else
+                {
+                    return Redirect("/Account/Login");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                // User is not authenticated, handle accordingly
-                return RedirectToAction("Register", "Account");
+                _logger.LogError($"Error in Index action: {ex.Message}");
+                return RedirectToAction("Login", "Account");
             }
         }
 
-		public IActionResult Privacy()
-		{
-            _logger.LogInformation("hfsdahfsahfsaf");
-            return View();
-		}
-
-		[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        /// <summary>
+        /// Action for handling errors.
+        /// </summary>
+        /// <returns>ViewResult</returns>
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 		public IActionResult Error()
 		{
 			return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

@@ -3,7 +3,10 @@ using newspaper.net.Models;
 
 namespace newspaper.net.Data
 {
-	public class Context : DbContext
+    /// <summary>
+    /// Represents the database context for the application.
+    /// </summary>
+    public class Context : DbContext
 	{
 		public Context(DbContextOptions<Context> options) : base(options)
 		{
@@ -12,6 +15,10 @@ namespace newspaper.net.Data
 		{
 			modelBuilder.UseSerialColumns();
 		}
+
 		public DbSet<User> Users { get; set; }
-	}
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Category> Categories { get; set; }
+		public DbSet<Comment> Comments { get; set; }
+    }
 }

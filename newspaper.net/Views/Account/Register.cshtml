@@ -1,16 +1,22 @@
 ﻿@model newspaper.net.Models.User
 
 <h2>Register</h2>
-
-<form asp-action="Register" method="post">
+<br />
+<form asp-action="Register" method="post" enctype="multipart/form-data">
+    <img id="imagePreview" style="max-width: 100px; max-height: 100px; border-radius: 50%; overflow: hidden; object-fit: cover;" />
+    <div class="form-group">
+        <label asp-for="ProfileImage">Profile Image:</label>
+        <input asp-for="ProfileImage" type="file" accept="image/*" onchange="previewImage()" />
+        <span asp-validation-for="ProfileImage" class="text-danger"></span>
+	</div>
     <div>
         <label asp-for="Email">Email:</label>
-        <input asp-for="Email" />
+        <input asp-for="Email" required />
         <span asp-validation-for="Email"></span>
     </div>
     <div>
         <label asp-for="Password">Password:</label>
-        <input asp-for="Password" type="password" />
+        <input asp-for="Password" type="password" required />
         <span asp-validation-for="Password"></span>
     </div>
     <div>
@@ -23,9 +29,10 @@
         <input asp-for="Phone" />
         <span asp-validation-for="Phone"></span>
     </div>
-    <button type="submit">Register</button>
+    <br />
+    <button type="submit" class="btn btn-primary" >Register</button>
 </form>
-
+<br />
 <p>
-    Already registered? <a asp-action="Login">Login here</a>.
+    Already registered? <a asp-action="Login">Login here</a>
 </p>

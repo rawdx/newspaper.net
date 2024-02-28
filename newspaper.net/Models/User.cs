@@ -3,7 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace newspaper.net.Models
 {
-	public class User
+    /// <summary>
+    /// Represents a user entity in the application.
+    /// </summary>
+    public class User
 	{
 		[Key]
 		[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -23,7 +26,9 @@ namespace newspaper.net.Models
 		[StringLength(15)]
 		public string? Phone {  get; set; }
 
-		public string? VerificationToken { get; set; }
+        public byte[]? ProfileImage { get; set; }
+
+        public string? VerificationToken { get; set; }
 
 		public bool IsVerified { get; set; }
 
@@ -33,6 +38,18 @@ namespace newspaper.net.Models
 
         public string? ResetToken { get; set; }
 
-		public DateTime? ResetTokenExpiry { get; set; }
+		public DateTime? ResetTokenExpiration { get; set; }
+
+		public User(string name, string phone, bool isVerified, string role)
+		{
+			Name = name;
+			Phone = phone;
+			IsVerified = isVerified;
+			Role = role;
+		}
+
+		public User()
+		{
+		}
 	}
 }

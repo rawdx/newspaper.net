@@ -1,11 +1,14 @@
-﻿@model List<User>
+﻿@model List<UserDto>
 
 <h2>User List</h2>
+
+<a asp-action="CreateUser" class="btn btn-primary">Create new user</a><br />
 
 <table class="table">
     <thead>
         <tr>
             <th>Id</th>
+            <th>Profile Image</th>
             <th>Email</th>
             <th>Name</th>
             <th>Phone</th>
@@ -19,6 +22,16 @@
         {
             <tr>
                 <td>@user.Id</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(user.ProfileImage))
+                    {
+                        <img src="data:image/png;base64,@user.ProfileImage" alt="Profile Image" style="max-width: 50px; max-height: 50px; border-radius: 50%;" />
+                    }
+                    else
+                    {
+                        <span>No Image</span>   
+                    }
+                </td>
                 <td>@user.Email</td>
                 <td>@user.Name</td>
                 <td>@user.Phone</td>

@@ -1,19 +1,26 @@
 ﻿@model newspaper.net.Models.User
 
 <h2>Login</h2>
-
+<br />
 <form asp-action="Login" method="post">
     <div>
-        <label>Email:</label>
-        <input name="email" />
+        <label asp-for="Email">Email:</label>
+        <input asp-for="Email" required />
+        <span asp-validation-for="Email"></span>
     </div>
     <div>
-        <label>Password:</label>
-        <input name="password" type="password" />
+        <label asp-for="Password">Password:</label>
+        <input asp-for="Password" type="password" required />
+        <span asp-validation-for="Password"></span>
     </div>
-    <button type="submit">Login</button>
+    <br />
+    <button type="submit" class="btn btn-primary">Login</button>
 </form>
-
+<br />
 <p>
     <a asp-action="Register">Create an account</a>
+</p>
+
+<p>
+    <a asp-action="ForgotPassword">Forgot your password?</a>
 </p>

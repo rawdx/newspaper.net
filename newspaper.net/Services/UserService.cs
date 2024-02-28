@@ -2,194 +2,196 @@
 using newspaper.net.Models;
 using System.Net.Mail;
 using System.Net;
+using newspaper.net.Controllers;
 
 namespace newspaper.net.Services
 {
+    /// <summary>
+    /// Service for managing user-related operations.
+    /// </summary>
     public interface IUserService
     {
-        bool IsEmailAlreadyRegistered(string email);
-        User RegisterUser(User user);
-        List<User> GetAllUsers();
-        User GetUserById(int id);
-        void UpdateUser(User user);
+        /// <summary>
+        /// Converts a <see cref="User"/> entity to a <see cref="UserDto"/> data transfer object.
+        /// </summary>
+        /// <param name="user">The user entity to convert.</param>
+        /// <returns>The corresponding <see cref="UserDto"/>.</returns>
+        UserDto ConvertToUserDto(User user);
+
+        /// <summary>
+        /// Retrieves a list of all users as <see cref="UserDto"/>.
+        /// </summary>
+        /// <returns>The list of all users.</returns>
+        List<UserDto> GetAllUsers();
+
+        /// <summary>
+        /// Retrieves a user by their unique identifier as <see cref="UserDto"/>.
+        /// </summary>
+        /// <param name="id">The unique identifier of the user.</param>
+        /// <returns>The user as <see cref="UserDto"/>.</returns>
+        UserDto GetUserById(int id);
+
+        /// <summary>
+        /// Retrieves a user by their email address.
+        /// </summary>
+        /// <param name="email">The email address of the user.</param>
+        User GetUserByEmail(string email);
+
+        /// <summary>
+        /// Updates user information and profile image.
+        /// </summary>
+        /// <param name="userDto">The updated user information.</param>
+        /// <param name="profileImage">The new profile image.</param>
+        void UpdateUser(UserDto user, IFormFile profileImage);
+
+        /// <summary>
+        /// Creates a new user with the specified information and profile image.
+        /// </summary>
+        /// <param name="user">The user entity to create.</param>
+        /// <param name="profileImage">The profile image of the user.</param>
+        void CreateUser(User user, IFormFile profileImage);
+
+        /// <summary>
+        /// Deletes a user by their unique identifier.
+        /// </summary>
+        /// <param name="id">The unique identifier of the user to delete.</param>
         void DeleteUser(int id);
-        bool VerifyEmail(string token);
-        User? AuthenticateUser(string email, string password);
+
     }
 
+    /// <summary>
+    /// Implementation of the <see cref="IUserService"/> interface.
+    /// </summary>
     public class UserService : IUserService
     {
-        private readonly List<User> _users = new List<User>();
-
         private readonly Context _context;
+        private readonly IVerificationService _verificationService;
+        private readonly IAccountService _accountService;
 
-        public UserService(Context context)
+        public UserService(Context context, IVerificationService verificationService, IAccountService accountService)
         {
             _context = context;
+            _verificationService = verificationService;
+            _accountService = accountService;
         }
 
-        public bool IsEmailAlreadyRegistered(string email)
+        /// <inheritdoc />
+        public User GetUserByEmail(string email)
         {
-            return _context.Users.Any(u => u.Email == email);
+            return _context.Users.First(u => u.Email == email);
         }
 
-        public User RegisterUser(User user)
+        /// <inheritdoc />
+        public UserDto ConvertToUserDto (User user)
         {
-            if (IsEmailAlreadyRegistered(user.Email))
+            return new UserDto
+            {
+                Id = user.Id,
+                Email = user.Email,
+                Role = user.Role,
+                Name = user.Name,
+                Phone = user.Phone,
+                ProfileImage = user.ProfileImage != null ? Convert.ToBase64String(user.ProfileImage) : null,
+                IsVerified = user.IsVerified,
+            };
+        }
+
+        /// <inheritdoc />
+        public List<UserDto> GetAllUsers()
+        {
+            List<UserDto> userDtos = new List<UserDto>();
+
+            var users = _context.Users.ToList();
+
+            foreach (var user in users)
+            {
+                userDtos.Add(ConvertToUserDto(user));
+            }
+            return userDtos;
+        }
+
+        /// <inheritdoc />
+        public UserDto GetUserById(int id)
+        {
+            User user = _context.Users.Find(id);
+
+            if (user != null)
+            {
+                return ConvertToUserDto(user);
+            }
+            return null;
+		}
+
+        /// <inheritdoc />
+        public void UpdateUser(UserDto userDto, IFormFile profileImage)
+        {
+
+            var user = _context.Users.Find(userDto.Id);
+
+            if (user != null)
+            {
+				user.Name = userDto.Name;
+				user.Phone = userDto.Phone;
+				user.IsVerified = userDto.IsVerified;
+				user.Role = userDto.Role;
+
+				if (profileImage != null)
+				{
+					using (MemoryStream memoryStream = new MemoryStream())
+					{
+						profileImage.CopyTo(memoryStream);
+						user.ProfileImage = memoryStream.ToArray();
+					}
+				}
+
+				_context.SaveChanges();
+            }
+            else
+            {
+                throw new InvalidOperationException("User not found.");
+            }
+        }
+
+        /// <inheritdoc />
+        public void CreateUser(User user, IFormFile profileImage)
+        {
+            if (_accountService.IsEmailAlreadyRegistered(user.Email))
             {
                 throw new InvalidOperationException("Email is already registered.");
             }
 
-            user.VerificationToken = GenerateEmailVerificationToken();
-            user.Password = HashPassword(user.Password);
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
             user.VerificationToken = Guid.NewGuid().ToString();
-            user.IsVerified = false;
 
-            _context.Users.Add(user);
+			if (profileImage != null)
+			{
+				using (MemoryStream memoryStream = new MemoryStream())
+				{
+					profileImage.CopyTo(memoryStream);
+					user.ProfileImage = memoryStream.ToArray();
+				}
+			}
+
+			_context.Users.Add(user);
             _context.SaveChanges();
 
-            SendVerificationEmail(user.Email, user.VerificationToken);
-
-            return user;
+            if(!user.IsVerified)
+                _verificationService.SendVerificationEmail(user.Email, user.VerificationToken);
         }
 
-        public List<User> GetAllUsers()
-        {
-            return _users;
-        }
-
-        public User GetUserById(int id)
-        {
-            return _users.FirstOrDefault(u => u.Id == id);
-        }
-
-        public void UpdateUser(User user)
-        {
-            var existingUser = _users.FirstOrDefault(u => u.Id == user.Id);
-
-            if (existingUser != null)
-            {
-                existingUser.Email = user.Email;
-                existingUser.Password = user.Password; // Note: In a real scenario, you might want to hash the new password
-                existingUser.Name = user.Name;
-                existingUser.Phone = user.Phone;
-                existingUser.IsVerified = user.IsVerified;
-                existingUser.Role = user.Role;
-            }
-            else
-            {
-                throw new InvalidOperationException("User not found.");
-            }
-        }
-
+        /// <inheritdoc />
         public void DeleteUser(int id)
         {
-            var userToRemove = _users.FirstOrDefault(u => u.Id == id);
-
-            if (userToRemove != null)
-            {
-                _users.Remove(userToRemove);
-            }
-            else
-            {
-                throw new InvalidOperationException("User not found.");
-            }
-        }
-
-        public bool VerifyEmail(string token)
-        {
-            if (string.IsNullOrEmpty(token))
-            {
-                return false;
-            }
-
-            var user = _context.Users.FirstOrDefault(u => u.VerificationToken == token);
+            var user = _context.Users.Find(id);
 
             if (user != null)
             {
-                user.IsVerified = true;
+				_context.Users.Remove(user);
                 _context.SaveChanges();
-                return true;
-            }
-
-            return false;
-        }   
-
-        public User? AuthenticateUser(string email, string password)
-        {
-            var storedUser = _context.Users.FirstOrDefault(u => u.Email == email);
-
-            if (storedUser != null)
-            {
-                // Use BCrypt.Net to verify the password
-                if (BCrypt.Net.BCrypt.Verify(password, storedUser.Password))
-                {
-                    return storedUser;
-                }
-            }
-
-            return null;
-        }
-
-        private string HashPassword(string password)
-        {
-            return BCrypt.Net.BCrypt.HashPassword(password);
-        }
-
-        private string GenerateEmailVerificationToken()
-        {
-            return Guid.NewGuid().ToString();
-        }
-
-        private void SendVerificationEmail(string email, string verificationToken)
-        {
-            if (IsValidEmail(email))
-            {
-                string senderEmail = "jihawww@gmail.com"; // Your Gmail email address
-                string senderPassword = "atjwgryavsfvwabf"; // Your Gmail password or App Password
-
-                using (MailMessage mail = new MailMessage())
-                {
-                    mail.From = new MailAddress(senderEmail);
-                    mail.To.Add(email);
-                    mail.Subject = "Email Verification";
-                    mail.Body = $"Click the link to verify your email: https://localhost:7062/Account/VerifyEmail?token={verificationToken}";
-                    mail.IsBodyHtml = false;
-
-                    using (SmtpClient smtpClient = new SmtpClient("smtp.gmail.com"))
-                    {
-                        smtpClient.Port = 587;
-                        smtpClient.Credentials = new NetworkCredential(senderEmail, senderPassword);
-                        smtpClient.EnableSsl = true;
-
-                        try
-                        {
-                            smtpClient.Send(mail);
-                        }
-                        catch (Exception ex)
-                        {
-                            // Handle exceptions, log, or throw
-                            Console.WriteLine(ex.Message);
-                        }
-                    }
-                }
             }
             else
             {
-                Console.WriteLine("Invalid email address");
-            }
-        }
-
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
+                throw new InvalidOperationException("User not found.");
             }
         }
     }
